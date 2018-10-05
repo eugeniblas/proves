@@ -1,0 +1,42 @@
+[
+   {
+	"model": "auth.User",
+	"pk": 1,
+	"fields": {
+		"username": "@user1",
+		"password": "psw1",
+		"first_name": "name1",
+		"last_name" : "surname1",
+		"email": "user1@mail.com"
+	}
+   }, 
+   {
+	"model": "buzzer.Buser",
+	"pk": 1,
+	"fields": {
+		"user_id": 1,
+		"screen_name": "user1_screen",
+		"location": "Barcelona UE 1"
+	}
+   },
+   {
+	"model": "auth.User",
+	"pk": 2,
+	"fields": {
+		"username": "@user2",
+		"password": "psw2",
+		"first_name": "name2",
+		"last_name" : "surname2",
+		"email": "user2@mail.com"
+	}
+   }, 
+   {
+	"model": "buzzer.Buser",
+	"pk": 2,
+	"fields": {
+		"user_id": 2,
+		"screen_name": "user2_screen",
+		"location": "Barcelona UE 2"
+	}
+   } 
+]
