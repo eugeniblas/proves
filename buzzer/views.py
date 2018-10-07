@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
+from django import forms
 from django.contrib.auth.models import User
 from .models import Buser
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 
 
 # Create your views here.
@@ -43,4 +44,31 @@ def signup(request):
         form = UserCreationForm()
     return render(request, "signup.html", {'form': form})
 
+
+def loginView(request):
+    return render(request, 'login.html')
+
+
+def login(request):
+    username = request.POST.get('username', '')
+    password = request.POST.get('password', '')
+    user = authenticate(username=username, password=password)
+
+    if user is not None:
+        if user.is_active:  # Active user are not banned users
+            login(request, user)
+            # Redirect to a success page.
+            return HttpResponseRedirect(reverse('index'))
+
+        else:   # User is banned
+            raise forms.ValidationError(_("This account is banned."), code='inactive',)
+    else:
+        # Show an error page
+        return HttpResponseRedirect(reverse('login'))
+
+
+def logout_view(request):
+    logout(request)
+    # Redirect to a success page.
+    return HttpResponseRedirect(reverse("index"))
 
