@@ -20,3 +20,6 @@ def users(request, user=""):
         response = response + '<BR> <li>' + '<BR> <li>'.join([Buser.all_fields(user.buser) for user in list_of_users])
 
     return HttpResponse(response)
+
+def loginView(request):
+    return render(request, 'login.html')
