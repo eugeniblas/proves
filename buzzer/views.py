@@ -1,13 +1,24 @@
+from comtypes.automation import _
+from django import forms
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.models import User
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
+
 from .models import Buser
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required
 def index(request):
-    return HttpResponse("Hello, this is Buzzer app")
+    if(request.user.is_authenticated):
+        return render(request,'Home_Page.html')
+    else:
+        return render(request, 'login.html')
+
 
 # List All Users o List one (username)
 def users(request, user=""):
@@ -54,8 +65,8 @@ def loginView(request):
             login(request, user)
 
             # Redirect to a success page.
-            #return HttpResponseRedirect(reverse('index'))
-            return render(request, 'Home_Page.html')
+            return HttpResponseRedirect(reverse('index'))
+            #return render(request, 'Home_Page.html')
 
         else:   # User is banned
             raise forms.ValidationError(_("This account is banned."), code='inactive',)
