@@ -27,7 +27,7 @@ def users(request, user=""):
     return HttpResponse(response)
 
 
-def signup(request):
+def signupView(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -46,14 +46,11 @@ def signup(request):
 
 
 def loginView(request):
-    return render(request, 'login.html')
-
-
-def login(request):
     username = request.POST.get('username', '')
+    print(username)
     password = request.POST.get('password', '')
+    print(password)
     user = authenticate(username=username, password=password)
-
     if user is not None:
         if user.is_active:  # Active user are not banned users
             login(request, user)
@@ -64,10 +61,10 @@ def login(request):
             raise forms.ValidationError(_("This account is banned."), code='inactive',)
     else:
         # Show an error page
-        return HttpResponseRedirect(reverse('login'))
+        return render(request, 'login.html')
 
 
-def logout_view(request):
+def logoutView(request):
     logout(request)
     # Redirect to a success page.
     return HttpResponseRedirect(reverse("index"))
