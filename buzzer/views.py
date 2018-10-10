@@ -1,6 +1,6 @@
 from comtypes.automation import _
 from django import forms
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect
@@ -14,9 +14,9 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 @login_required
 def index(request):
-    if(request.user.is_authenticated):
-        return render(request,'Home_Page.html')
-    else:
+    if(request.user.is_authenticated()):
+        return render(request, 'Home_Page.html')
+    else :
         return render(request, 'login.html')
 
 
@@ -62,9 +62,10 @@ def loginView(request):
 
     if user is not None:
         if user.is_active:  # Active user are not banned users
+            request.session.set_expiry(300) #5 minutes
             login(request, user)
 
-            # Redirect to a success page.
+           # Redirect to a success page.
             return HttpResponseRedirect(reverse('index'))
             #return render(request, 'Home_Page.html')
 
@@ -77,6 +78,9 @@ def loginView(request):
 
 def logoutView(request):
     logout(request)
+    response = redirect('buzzer.views.index')
+    response.delete_cookie('./buzzer/')
+    return response
     # Redirect to a success page.
-    return render(request, 'login.html')
+    #return render(request, 'login.html')
 

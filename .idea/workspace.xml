@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="af29acbb-22af-48aa-ba2c-67999b5b20bd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buzzer/templates/Home_Page.html" beforeDir="false" afterPath="$PROJECT_DIR$/buzzer/templates/Home_Page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EntornBuzzer/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/EntornBuzzer/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buzzer/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/buzzer/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buzzer/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/buzzer/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buzzer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/buzzer/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
@@ -41,7 +42,7 @@
           <entry key="css" value="1" />
           <entry key="html" value="8" />
           <entry key="json" value="1" />
-          <entry key="py" value="12" />
+          <entry key="py" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -49,19 +50,19 @@
           <entry key="CSS" value="1" />
           <entry key="HTML" value="8" />
           <entry key="JSON" value="1" />
-          <entry key="Python" value="12" />
+          <entry key="Python" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="228" />
-          <entry key="py" value="398" />
+          <entry key="html" value="234" />
+          <entry key="py" value="564" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="228" />
-          <entry key="Python" value="398" />
+          <entry key="HTML" value="234" />
+          <entry key="Python" value="564" />
         </counts>
       </usages-collector>
     </session>
@@ -75,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/buzzer/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -84,31 +85,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/buzzer/fixtures/buser.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/buzzer/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
+            <state relative-caret-position="-16">
+              <caret line="29" column="27" lean-forward="true" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/buzzer/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+            <state relative-caret-position="193">
+              <caret line="64" column="54" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="54" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
-                <marker date="1539194182601" expanded="true" signature="2698:2699" ph="..." />
+                <marker date="1539202015404" expanded="true" signature="2873:2874" ph="..." />
               </folding>
             </state>
           </provider>
@@ -119,26 +111,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="361">
               <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/buzzer/static/stylesheets/login.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="86" column="27" lean-forward="true" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/buzzer/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -155,11 +127,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/buzzer/templates/Home_Page.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="161">
-              <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+              <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -174,13 +146,14 @@
       <list>
         <option value="$PROJECT_DIR$/buzzer/admin.py" />
         <option value="$PROJECT_DIR$/buzzer/templates/signup.html" />
-        <option value="$PROJECT_DIR$/buzzer/templates/login.html" />
         <option value="$PROJECT_DIR$/EntornBuzzer/urls.py" />
         <option value="$PROJECT_DIR$/buzzer/templates/base.html" />
         <option value="$PROJECT_DIR$/buzzer/static/stylesheets/login.css" />
-        <option value="$PROJECT_DIR$/buzzer/views.py" />
-        <option value="$PROJECT_DIR$/buzzer/urls.py" />
+        <option value="$PROJECT_DIR$/EntornBuzzer/settings.py" />
         <option value="$PROJECT_DIR$/buzzer/templates/Home_Page.html" />
+        <option value="$PROJECT_DIR$/buzzer/templates/login.html" />
+        <option value="$PROJECT_DIR$/buzzer/urls.py" />
+        <option value="$PROJECT_DIR$/buzzer/views.py" />
       </list>
     </option>
   </component>
@@ -258,7 +231,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="EntornBuzzer.settings" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\jose_\Anaconda3\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -267,7 +240,7 @@
       <option name="port" value="8000" />
       <option name="host" value="" />
       <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
+      <option name="browserUrl" value="http://127.0.0.1:8000/" />
       <option name="runTestServer" value="false" />
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
@@ -290,10 +263,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4988864" visible="true" weight="0.24962178" />
-      <window_info id="Favorites" order="1" sideWeight="0.5011136" side_tool="true" visible="true" weight="0.24962178" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="1" sideWeight="0.5011136" side_tool="true" weight="0.24962178" />
+      <window_info id="Structure" order="2" sideWeight="0.5011136" side_tool="true" visible="true" weight="0.24962178" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
@@ -354,13 +328,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/buzzer/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EntornBuzzer/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -394,31 +361,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/buzzer/views.py">
+    <entry file="file://$PROJECT_DIR$/EntornBuzzer/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-            <marker date="1539194182601" expanded="true" signature="2698:2699" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/buzzer/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-1559">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/buzzer/templates/Home_Page.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
-          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buzzer/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16">
+          <caret line="29" column="27" lean-forward="true" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buzzer/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buzzer/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="64" column="54" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+            <marker date="1539202015404" expanded="true" signature="2873:2874" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
