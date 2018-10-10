@@ -10,7 +10,7 @@ from django.contrib.auth import login, authenticate, logout
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello, this is Buzzer app")
+    return render(request, 'testLogin.html')
 
 
 # List All Users o List one (username)
@@ -46,10 +46,8 @@ def signupView(request):
 
 
 def loginView(request):
-    username = request.POST.get('username', '')
-    print(username)
-    password = request.POST.get('password', '')
-    print(password)
+    username = request.POST.get('username', '')    
+    password = request.POST.get('password', '')    
     user = authenticate(username=username, password=password)
     if user is not None:
         if user.is_active:  # Active user are not banned users
