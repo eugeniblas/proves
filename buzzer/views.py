@@ -4,7 +4,6 @@ from django.urls import reverse
 from django import forms
 from django.contrib.auth.models import User
 from .models import Buser
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate, logout
 
 
@@ -28,21 +27,30 @@ def users(request, user=""):
 
 
 def signupView(request):
+
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
 
-            # Log in the user after the registration
-            username = form.cleaned_data.get("username")
-            raw_password = form.cleaned_data.get("password1")
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
+        username = request.POST.get('username', '')
+        password = request.POST.get('password', '')
+        user = authenticate(username=username, password=password)
 
-            return HttpResponseRedirect(reverse("index"))
+        if user is not None:
+            #fer saltar una alerta que l'usuari ja existeix
+            return render(request, "signup.html")
+
+        else:
+            user = User.objects.create_user(username=username,password=password)
+            user.save()
+            if user is not None:
+                if user.is_active:  # Active user are not banned users
+                    login(request, user)
+                    # Redirect to a success page.
+                    return HttpResponseRedirect(reverse('index'))
+
+            return render(request, "signup.html")
+
     else:
-        form = UserCreationForm()
-    return render(request, "signup.html", {'form': form})
+        return render(request, "signup.html")
 
 
 def loginView(request):
