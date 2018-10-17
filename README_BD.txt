@@ -5,21 +5,32 @@
 *******************************************************************************
 
 *******************************************************************************
-*  Run migrate again to create those model tables in your database
-*  Load data 
+*  Delete old data bases (if it's necessary)
+*******************************************************************************
+
+...buzzer$ rm -f tmp.db db.sqlite3
+...buzzer$ rm -r ./buzzer/migrations
+
+*******************************************************************************
+*  Run migrate again to create those model tables in your database 
 *******************************************************************************
 
 ...buzzer$ python3 manage.py makemigrations buzzer
 ...buzzer$ python3 manage.py migrate
-...buzzer$ python3 manage.py loaddata ./buzzer/fixtures/buser.json
 
 
 *******************************************************************************
-*  Browse list of all users
+*  Load data 
+*     1. user (user+profile)
+*******************************************************************************
+
+...buzzer$ python3 manage.py loaddata ./buzzer/fixtures/user.json  
+
+*******************************************************************************
+*  Browse list of all users (profile)
 *******************************************************************************
 
 http://localhost:8000/buzzer/users/
-
 
 *******************************************************************************
 *  Browse list of one users (username)
