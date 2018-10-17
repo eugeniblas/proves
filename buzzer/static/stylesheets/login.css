@@ -31,17 +31,3 @@ background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
 #login-container .btn-row{
 	padding-left: 1em;
 }
-
-.navbar{
-	z-index: 2;
-}
-
-.navbar-brand {
-	margin-right: 5px;
-	padding: 0px 10px 0px 10px;
-}
-
-.navbar-brand #buzzer-logo{
-	width: 45px;
-	height: 45px;
-}
