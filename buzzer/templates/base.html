@@ -9,10 +9,41 @@
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-	{% block stylesheets %}{% endblock %}
+<link rel="stylesheet" type="text/css" href="{% static "stylesheets/navbar.css" %}">
+
+{% block stylesheets %}{% endblock %}
 
 </head>
 <body>
+	{% block navbar %}
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="{% url 'index' %}"><img id="buzzer-logo" src="{% static "images/buzzer_logo.png" %}"></a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">      
+	  		<ul class="nav navbar-nav navbar-right">
+	    	{% if user.is_authenticated %}
+	    		<li><a href="{% url 'index' %}">{{ user.username }}</a></li> <!-- THIS NEEDS TO BE FIXED WHEN THE URLS FOR PROFILES ARE SET -->
+	        	<li><a href="{% url 'logout' %}">Logout</a></li>
+	        {% else %}
+	      		<li><a href="{% url 'login' %}">Login</a></li>                
+	      		<li><a href="{% url 'signup' %}">Sign up</a></li>
+	        {% endif %}          
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+	{% endblock %}
 
 	{% block content %}
 	{% endblock %}
