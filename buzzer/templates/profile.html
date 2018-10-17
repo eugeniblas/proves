@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+<!-- HEAD -->
+{% block title %}Buzzer - {{user.username}}{% endblock %}
+{% load static %}
+{% block stylesheets %} <link rel="stylesheet" type="text/css" href="{% static "stylesheets/profile.css" %}	"> {% endblock %}
+
+
+<!-- BODY -->
+{% block content %}
+<div>
+<!-- PROFILE INFO -->
+<div id="profile-container">  
+  <div class="personal-info">
+    <a href="{% url 'profile' %}">
+      <img class="pfp" src="{% static "images/buzzer_logo.png" %}"></a>
+    <div class="names">
+      <a href="{% url 'profile' %}"><h4 class="username">{{user.username}}</h4></a>
+      <h5 class="usertag">@policia</h5>
+    </div>
+    <br>
+    <div class="bio">
+      <p>Soy una cuenta de pruebas para ver cómo quedará cuando se haga desde la base de datos</p>
+    </div>
+    <div class="gps">
+      <i class="fas fa-map-marker-alt"></i>
+      <p>Barcelona, Catalunya</p>
+    </div>
+    <div class="birthday">
+      <i class="fas fa-birthday-cake"></i>
+      <p>Fecha de nacimiento: 19 de agosto de 1997</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- BUZZES -->
+<div id="buzz-container">
+	<h3>Inicia sesión en Buzzer</h3>
+	<br>
+</div>
+</div>
+{% endblock %}

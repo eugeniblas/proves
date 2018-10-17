@@ -75,3 +75,6 @@ def logoutView(request):
     # Redirect to a success page.
     return HttpResponseRedirect(reverse("index"))
 
+
+def profile(request):  # TEMPORAL
+    return render(request, 'profile.html')
