@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+<!-- HEAD -->
+{% block title %}Buzzer - Test Visualizing your Posts{% endblock %}
+{% load static %}
+{% block stylesheets %} <link rel="stylesheet" type="text/css" href="{% static "stylesheets/login.css" %}"> {% endblock %}
+
+
+<!-- BODY -->
+{% block content %}
+{% for post in posts %}
+	<div>
+	  <p> publicado: {{ post.published_date }} </p>
+	  <h1>
+		<a href = "" >{{ post.title }} </a>
+	  </h1>
+	  <p>{{ post.text|linebreaksbr }}</p>
+	</div>
+  {% endfor %}
+{% endblock %}

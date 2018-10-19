@@ -1,16 +1,21 @@
-from django.shortcuts import render
+from django.utils import timezone
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django import forms
 from django.contrib.auth.models import User
 from .models import Profile
 from django.contrib.auth import login, authenticate, logout
-
+from .forms import PostForm
+from .models import Post
 
 # Create your views here.
 def index(request):
-    return render(request, 'testLogin.html')
-
+    if(request.user.is_authenticated):
+        return render(request, 'testLogin.html')
+    else :
+        return render(request, 'login.html')
 
 # List All Users o List one (username)
 def users(request, user=""):
@@ -60,6 +65,7 @@ def loginView(request):
     if user is not None:
         if user.is_active:  # Active user are not banned users
             login(request, user)
+            request.session.set_expiry(300);
             # Redirect to a success page.
             return HttpResponseRedirect(reverse('index'))
 
@@ -69,9 +75,27 @@ def loginView(request):
         # Show an error page
         return render(request, 'login.html')
 
-
+@login_required
 def logoutView(request):
     logout(request)
     # Redirect to a success page.
     return HttpResponseRedirect(reverse("index"))
 
+#Create new Post
+def post_new(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return render(request,'testLogin.html')
+    else:
+        form = PostForm()
+    return render(request, 'post_edit.html', {'form': form})
+
+#View where we'll have all our posts
+def post_list(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    return render(request, 'post_list.html', {'posts': posts})
