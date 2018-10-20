@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from datetime import datetime 
+
 
 # User:  auth_user (contrib.auth.User)
 #   user of Buzzer
@@ -27,14 +29,15 @@ class Profile (models.Model):
     screen_name = models.CharField(max_length=50)  # name that appears on screen (complementary username)
     location = models.CharField(max_length=150)  # defined location for user account’s profile
     url = models.CharField(max_length=150)  # URL provided by the user in association with their profile
-    bio = models.CharField(max_length=150) # general information about user
-    birthday = models.DateField(auto_now=False, auto_now_add=False,null=True) # user's birthday
+    bio = models.CharField(max_length=150) # general information about user 
+    birthday = models.DateField(auto_now=False, auto_now_add=False,null=True) # user's birthday     
 
     def __str__(self):
         return(self.user.username + " - " + self.screen_name + " - " + self.user.first_name + " - " + self.user.last_name)
 
     def all_fields(self):
         data = self.all_fields_user()
+        data += "  screen_name: " + self.screen_name
         data += "  screen_name: " + self.screen_name
         data += "  location: " + self.location
         data += "  url: " + self.url
@@ -50,24 +53,30 @@ class Profile (models.Model):
         return(data)
 
 
-from django.db import models
-from django.utils import timezone
-
-
-"""class Post(models.Model):
-    author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
-    text = models.TextField()
-    created_date = models.DateTimeField(
-            default=timezone.now)
-    published_date = models.DateTimeField(
-            blank=True, null=True)
-
-    def publish(self):
-        self.published_date = timezone.now()
+# Buz: buzzer_buz
+#   posts of buzzer
+class Buzz (models.Model):
+    id_buzz = models.AutoField(primary_key=True) # id of buzz: automatic incremental
+    user = models.ForeignKey(User, on_delete=models.CASCADE) # id of user who creates the buzz
+    title = models.CharField(max_length=140) # title of the buzz
+    text = models.CharField(max_length=140) # text of the buzz
+    created_at = models.DateTimeField(default=datetime.now, blank=True) # creation date time
+    published_date = models.DateTimeField(blank=True, null=True) # publication date time
+    def __str__(self):
+        return(self.title)
+    def all_fields(self):        
+        data = "id_buzz: " + str(self.id_buzz)
+        data += "  id_user: " + str(self.user.id)
+        data += "  title: " + str(self.title)
+        data += "  text: " + self.text
+        data += "  created_at: " + str(self.created_at)
+        data += "  published_date: " + str(self.published_date)		
+        return(data)
+    def published(self):
+        self.published_data = timezone.now()
         self.save()
 
-    def __str__(self):
-        return self.title
-        """
+
+
+
 
