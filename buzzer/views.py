@@ -10,6 +10,7 @@ from django.contrib.auth import login, authenticate, logout
 from .forms import PostForm
 from .models import Post
 
+
 # Create your views here.
 def index(request):
     if(request.user.is_authenticated):
@@ -82,7 +83,7 @@ def logoutView(request):
     return HttpResponseRedirect(reverse("index"))
 
 #Create new Post
-def post_new(request):
+"""def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
@@ -94,7 +95,20 @@ def post_new(request):
     else:
         form = PostForm()
     return render(request, 'post_edit.html', {'form': form})
+"""
 
+def post_new(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return render(request,'testLogin.html')
+    else:
+        form = PostForm()
+    return render(request, 'post_edit.html', {'form': form})
 #View where we'll have all our posts
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')

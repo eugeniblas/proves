@@ -18,19 +18,36 @@ from django.utils import timezone
 #     date_joined (datetime - null)
 
 # Profile: buzzer_profile
+
 #   extension User (one to one)
+
 class Profile (models.Model):
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    screen_name = models.CharField(max_length=50)  # name that appears on screen (complementary username)    
+    screen_name = models.CharField(max_length=50)  # name that appears on screen (complementary username)
     location = models.CharField(max_length=150)  # defined location for user account’s profile
     url = models.CharField(max_length=150)  # URL provided by the user in association with their profile
-    bio = models.CharField(max_length=150) # general information about user 
-    birthday = models.DateField(auto_now=False, auto_now_add=False,null=True) # user's birthday 
-    
+    bio = models.CharField(max_length=150) # general information about user
+    birthday = models.DateField(auto_now=False, auto_now_add=False,null=True) # user's birthday
+
     def __str__(self):
         return(self.user.username + " - " + self.screen_name + " - " + self.user.first_name + " - " + self.user.last_name)
+
     def all_fields(self):
-        return("username: " + self.user.username + "  password: " + self.user.password)
+        data = self.all_fields_user()
+        data += "  screen_name: " + self.screen_name
+        data += "  location: " + self.location
+        data += "  url: " + self.url
+        data += "  bio: " + self.bio
+        data += "  birthday: " + str(self.birthday)
+        return(data)
+
+    def all_fields_user(self):
+        data = "key: " + str(self.user.id)
+        data += "  username: " + self.user.username + "  password: " + self.user.password
+        data += " first name: " + self.user.first_name + " last name: " + self.user.last_name
+        data += " email: " + self.user.email
+        return(data)
 
 
 from django.db import models
