@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f63a6f02-e5e4-487f-891b-1a2a78036ae9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buzzer/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/buzzer/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buzzer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/buzzer/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buzzer/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/buzzer/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buzzer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/buzzer/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,24 +17,24 @@
     <session id="-240758531">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="json" value="1" />
+          <entry key="json" value="2" />
           <entry key="py" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSON" value="1" />
+          <entry key="JSON" value="2" />
           <entry key="Python" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1625" />
+          <entry key="py" value="1643" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1625" />
+          <entry key="Python" value="1643" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -57,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/buzzer/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="61" column="46" lean-forward="true" selection-start-line="61" selection-start-column="46" selection-end-line="61" selection-end-column="46" />
+            <state relative-caret-position="649">
+              <caret line="66" column="19" lean-forward="true" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
                 <marker date="1540148482867" expanded="true" signature="1433:1442" ph="..." />
@@ -73,13 +68,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/buzzer/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="118" column="31" selection-start-line="118" selection-start-column="31" selection-end-line="118" selection-end-column="31" />
+            <state relative-caret-position="442">
+              <caret line="127" column="66" selection-start-line="127" selection-start-column="66" selection-end-line="127" selection-end-column="66" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <marker date="1540148571783" expanded="true" signature="3987:3988" ph="..." />
-                <marker date="1540148571783" expanded="true" signature="4508:4912" ph="..." />
-                <marker date="1540148571783" expanded="true" signature="4742:4912" ph="..." />
+                <marker date="1540148922274" expanded="true" signature="3987:3988" ph="..." />
+                <marker date="1540148922274" expanded="true" signature="4508:4925" ph="..." />
+                <marker date="1540148922274" expanded="true" signature="4755:4925" ph="..." />
               </folding>
             </state>
           </provider>
@@ -128,7 +123,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="536" />
     <option name="y" value="4" />
     <option name="width" value="872" />
@@ -346,10 +341,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/buzzer/fixtures/buzz.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/buzzer/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="61" column="46" lean-forward="true" selection-start-line="61" selection-start-column="46" selection-end-line="61" selection-end-column="46" />
+        <state relative-caret-position="649">
+          <caret line="66" column="19" lean-forward="true" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
             <marker date="1540148482867" expanded="true" signature="1433:1442" ph="..." />
@@ -362,13 +360,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/buzzer/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="118" column="31" selection-start-line="118" selection-start-column="31" selection-end-line="118" selection-end-column="31" />
+        <state relative-caret-position="442">
+          <caret line="127" column="66" selection-start-line="127" selection-start-column="66" selection-end-line="127" selection-end-column="66" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <marker date="1540148571783" expanded="true" signature="3987:3988" ph="..." />
-            <marker date="1540148571783" expanded="true" signature="4508:4912" ph="..." />
-            <marker date="1540148571783" expanded="true" signature="4742:4912" ph="..." />
+            <marker date="1540148922274" expanded="true" signature="3987:3988" ph="..." />
+            <marker date="1540148922274" expanded="true" signature="4508:4925" ph="..." />
+            <marker date="1540148922274" expanded="true" signature="4755:4925" ph="..." />
           </folding>
         </state>
       </provider>

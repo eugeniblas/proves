@@ -125,7 +125,7 @@ def userSearch(request, search_text):
 def buzzSearch(request, search_text):
     search = Buzz.objects.filter(text__contains=search_text)
     response = "Buzzs: <br>"
-    response += '<br> <li>' + '<br> <li>'.join([str(s) for s in search]) + "</li>"
+    response += '<br> <li>' + '<br> <li>'.join([str(s.all_fields()) for s in search]) + "</li>"
 
     return response
 
