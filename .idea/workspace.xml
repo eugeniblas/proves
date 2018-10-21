@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f63a6f02-e5e4-487f-891b-1a2a78036ae9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buzzer/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/buzzer/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buzzer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/buzzer/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buzzer/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/buzzer/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buzzer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/buzzer/views.py" afterDir="false" />
@@ -11,6 +14,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-240758531">
@@ -28,32 +34,37 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1349" />
+          <entry key="py" value="1625" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1349" />
+          <entry key="Python" value="1625" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.30" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/buzzer/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-170">
-              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+            <state relative-caret-position="411">
+              <caret line="61" column="46" lean-forward="true" selection-start-line="61" selection-start-column="46" selection-end-line="61" selection-end-column="46" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
+                <marker date="1540148482867" expanded="true" signature="1433:1442" ph="..." />
+                <marker date="1540148482867" expanded="true" signature="1751:1760" ph="..." />
+                <marker date="1540148482867" expanded="true" signature="2562:2571" ph="..." />
+                <marker date="1540148482867" expanded="true" signature="2866:2875" ph="..." />
               </folding>
             </state>
           </provider>
@@ -62,12 +73,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/buzzer/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="94" column="62" lean-forward="true" selection-start-line="94" selection-start-column="62" selection-end-line="94" selection-end-column="62" />
+            <state relative-caret-position="289">
+              <caret line="118" column="31" selection-start-line="118" selection-start-column="31" selection-end-line="118" selection-end-column="31" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <marker date="1540073761273" expanded="true" signature="3987:3988" ph="..." />
-                <marker date="1540073761273" expanded="true" signature="4530:4748" ph="..." />
+                <marker date="1540148571783" expanded="true" signature="3987:3988" ph="..." />
+                <marker date="1540148571783" expanded="true" signature="4508:4912" ph="..." />
+                <marker date="1540148571783" expanded="true" signature="4742:4912" ph="..." />
               </folding>
             </state>
           </provider>
@@ -86,12 +98,17 @@
         <entry file="file://$PROJECT_DIR$/buzzer/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
-              <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+              <caret line="25" column="58" lean-forward="true" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>title</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -99,8 +116,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/buzzer/models.py" />
         <option value="$PROJECT_DIR$/buzzer/urls.py" />
+        <option value="$PROJECT_DIR$/buzzer/models.py" />
         <option value="$PROJECT_DIR$/buzzer/views.py" />
       </list>
     </option>
@@ -244,8 +261,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16577825" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1673774" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
@@ -258,7 +276,7 @@
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="8" weight="0.32934132" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.11822126" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.11822126" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32934132" />
       <window_info anchor="right" id="SciView" order="0" />
@@ -273,17 +291,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/buzzer/urls.py</url>
-          <line>20</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/buzzer/static/stylesheets/login.css">
@@ -325,13 +332,6 @@
     <entry file="file://$PROJECT_DIR$/buzzer/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/buzzer/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/buzzer/fixtures/user.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -339,24 +339,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/buzzer/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="25" column="58" lean-forward="true" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/buzzer/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-170">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        <state relative-caret-position="411">
+          <caret line="61" column="46" lean-forward="true" selection-start-line="61" selection-start-column="46" selection-end-line="61" selection-end-column="46" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+            <marker date="1540148482867" expanded="true" signature="1433:1442" ph="..." />
+            <marker date="1540148482867" expanded="true" signature="1751:1760" ph="..." />
+            <marker date="1540148482867" expanded="true" signature="2562:2571" ph="..." />
+            <marker date="1540148482867" expanded="true" signature="2866:2875" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/buzzer/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="94" column="62" lean-forward="true" selection-start-line="94" selection-start-column="62" selection-end-line="94" selection-end-column="62" />
+        <state relative-caret-position="289">
+          <caret line="118" column="31" selection-start-line="118" selection-start-column="31" selection-end-line="118" selection-end-column="31" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <marker date="1540073761273" expanded="true" signature="3987:3988" ph="..." />
-            <marker date="1540073761273" expanded="true" signature="4530:4748" ph="..." />
+            <marker date="1540148571783" expanded="true" signature="3987:3988" ph="..." />
+            <marker date="1540148571783" expanded="true" signature="4508:4912" ph="..." />
+            <marker date="1540148571783" expanded="true" signature="4742:4912" ph="..." />
           </folding>
         </state>
       </provider>

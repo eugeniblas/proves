@@ -116,18 +116,27 @@ def userSearch(request, search_text):
     profileSearch= Profile.objects.filter(screen_name__contains=search_text)
     fullSearch = chain(usernameSearch, profileSearch)
     #Profile.objects.filter(Q(username__contains=search_text) | Q(screen_name__contains=search_text))
-    response = "Search: %s <BR>" % search_text
-    response += '<BR> <li>' + '<BR> <li>'.join([str(s) for s in fullSearch])
+    response = "<br> Users: <br>"
+    response += '<br>' + '<li>'.join([str(s) for s in fullSearch]) + "</li> <br>"
 
-    return HttpResponse(response)
+    return response
 
 
 def buzzSearch(request, search_text):
     search = Buzz.objects.filter(text__contains=search_text)
-    response = "Search: %s <BR>" % search_text
-    response += '<BR> <li>' + '<BR> <li>'.join([str(s) for s in search])
+    response = "Buzzs: <br>"
+    response += '<br> <li>' + '<br> <li>'.join([str(s) for s in search]) + "</li>"
+
+    return response
+
+
+def searchView(request, search_text):
+    response = "Search: %s <br>" % search_text
+
+    response += userSearch(request, search_text) + buzzSearch(request, search_text)
 
     return HttpResponse(response)
+
 
 ######      SEARCH     ######
 

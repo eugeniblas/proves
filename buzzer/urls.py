@@ -23,5 +23,5 @@ urlpatterns = [
 
 
     # Search
-    url(r'^search/(?P<search_text>.*)/$', views.userSearch, name='userSearch')
+    url(r'^search/(?P<search_text>.*)/$', views.searchView, name='search')
 ]
