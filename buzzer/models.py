@@ -50,7 +50,6 @@ class Profile (models.Model):
 class Buzz (models.Model):
     id_buzz = models.AutoField(primary_key=True) # id of buzz: automatic incremental
     user = models.ForeignKey(User, on_delete=models.CASCADE) # id of user who creates the buzz
-    title = models.CharField(max_length=140) # title of the buzz
     text = models.CharField(max_length=140) # text of the buzz
     created_at = models.DateTimeField(default=datetime.now, blank=True) # creation date time
     published_date = models.DateTimeField(blank=True, null=True) # publication date time
@@ -59,7 +58,6 @@ class Buzz (models.Model):
     def all_fields(self):
         data = "id_buzz: " + str(self.id_buzz)
         data += "  id_user: " + str(self.user.id)
-        data += "  title: " + str(self.title)
         data += "  text: " + self.text
         data += "  created_at: " + str(self.created_at)
         data += "  published_date: " + str(self.published_date)		
