@@ -7,6 +7,10 @@ from .models import Profile
 from .models import Buzz
 from django.contrib.auth import login, authenticate, logout
 
+from django.db.models import Q
+from itertools import chain
+
+
 
 # Create your views here.
 def index(request):
@@ -104,4 +108,26 @@ def logoutView(request):
     logout(request)
     # Redirect to a success page.
     return HttpResponseRedirect(reverse("index"))
+
+
+######      SEARCH     ######
+def userSearch(request, search_text):
+    usernameSearch = User.objects.filter(username__contains=search_text)
+    profileSearch= Profile.objects.filter(screen_name__contains=search_text)
+    fullSearch = chain(usernameSearch, profileSearch)
+    #Profile.objects.filter(Q(username__contains=search_text) | Q(screen_name__contains=search_text))
+    response = "Search: %s <BR>" % search_text
+    response += '<BR> <li>' + '<BR> <li>'.join([str(s) for s in fullSearch])
+
+    return HttpResponse(response)
+
+
+def buzzSearch(request, search_text):
+    search = Buzz.objects.filter(text__contains=search_text)
+    response = "Search: %s <BR>" % search_text
+    response += '<BR> <li>' + '<BR> <li>'.join([str(s) for s in search])
+
+    return HttpResponse(response)
+
+######      SEARCH     ######
 

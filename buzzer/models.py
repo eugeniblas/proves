@@ -56,7 +56,7 @@ class Buzz (models.Model):
     published_date = models.DateTimeField(blank=True, null=True) # publication date time
     def __str__(self):
         return(self.title)
-    def all_fields(self):        
+    def all_fields(self):
         data = "id_buzz: " + str(self.id_buzz)
         data += "  id_user: " + str(self.user.id)
         data += "  title: " + str(self.title)
