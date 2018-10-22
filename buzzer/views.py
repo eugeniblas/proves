@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django import forms
 from django.contrib.auth.models import User
-from .models import Buser
+from .models import Profile
 from django.contrib.auth import login, authenticate, logout
 
 
@@ -17,11 +17,11 @@ def users(request, user=""):
     if user:
         response = "You're looking for user from %s <BR>" % user
         list_of_users = User.objects.filter(username=user)
-        response = response + '<BR> <li>' + '<BR> <li>'.join([Buser.all_fields(user.buser) for user in list_of_users])
+        response = response + '<BR> <li>' + '<BR> <li>'.join([Profile.all_fields(user.profile) for user in list_of_users])
     else:
         response = "You're looking all Users"
         list_of_users = User.objects.filter()
-        response = response + '<BR> <li>' + '<BR> <li>'.join([Buser.all_fields(user.buser) for user in list_of_users])
+        response = response + '<BR> <li>' + '<BR> <li>'.join([Profile.all_fields(user.profile) for user in list_of_users])
 
     return HttpResponse(response)
 
