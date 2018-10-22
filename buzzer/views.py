@@ -6,8 +6,6 @@ from django.contrib.auth.models import User
 from .models import Profile
 from .models import Buzz
 from django.contrib.auth import login, authenticate, logout
-
-from django.db.models import Q
 from itertools import chain
 
 
@@ -110,14 +108,14 @@ def logoutView(request):
     return HttpResponseRedirect(reverse("index"))
 
 
-######      SEARCH     ######
 def userSearch(request, search_text):
-    usernameSearch = User.objects.filter(username__contains=search_text)
+    #user = User.objects.filter(username__contains=search_text)
+    usernameSearch = Profile.objects.filter(user__username__contains=search_text)
+
     profileSearch= Profile.objects.filter(screen_name__contains=search_text)
     fullSearch = chain(usernameSearch, profileSearch)
-    #Profile.objects.filter(Q(username__contains=search_text) | Q(screen_name__contains=search_text))
     response = "<br> Users: <br>"
-    response += '<br>' + '<li>'.join([str(s) for s in fullSearch]) + "</li> <br>"
+    response += '<br> <li>' + '<li>'.join([str(s) for s in fullSearch]) + "</li> <br>"
 
     return response
 
@@ -125,7 +123,7 @@ def userSearch(request, search_text):
 def buzzSearch(request, search_text):
     search = Buzz.objects.filter(text__contains=search_text)
     response = "Buzzs: <br>"
-    response += '<br> <li>' + '<br> <li>'.join([str(s.all_fields()) for s in search]) + "</li>"
+    response += '<br> <li>' + '<br> <li>'.join([str(s.all_fields()) for s in search]) + "</li> <br>"
 
     return response
 
@@ -136,7 +134,3 @@ def searchView(request, search_text):
     response += userSearch(request, search_text) + buzzSearch(request, search_text)
 
     return HttpResponse(response)
-
-
-######      SEARCH     ######
-

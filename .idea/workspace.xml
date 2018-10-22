@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f63a6f02-e5e4-487f-891b-1a2a78036ae9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buzzer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/buzzer/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,20 +30,21 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1643" />
+          <entry key="py" value="1792" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1643" />
+          <entry key="Python" value="1792" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.30" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
     </session>
@@ -52,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/buzzer/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="649">
-              <caret line="66" column="19" lean-forward="true" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
+            <state relative-caret-position="425">
+              <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
                 <marker date="1540148482867" expanded="true" signature="1433:1442" ph="..." />
@@ -68,13 +70,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/buzzer/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="127" column="66" selection-start-line="127" selection-start-column="66" selection-end-line="127" selection-end-column="66" />
+            <state relative-caret-position="544">
+              <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <marker date="1540148922274" expanded="true" signature="3987:3988" ph="..." />
-                <marker date="1540148922274" expanded="true" signature="4508:4925" ph="..." />
-                <marker date="1540148922274" expanded="true" signature="4755:4925" ph="..." />
+                <marker date="1540245053431" expanded="true" signature="3925:3926" ph="..." />
+                <marker date="1540245053431" expanded="true" signature="4423:4843" ph="..." />
+                <marker date="1540245053431" expanded="true" signature="4675:4843" ph="..." />
               </folding>
             </state>
           </provider>
@@ -93,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/buzzer/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
-              <caret line="25" column="58" lean-forward="true" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
+              <caret line="25" column="58" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -123,7 +125,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="536" />
     <option name="y" value="4" />
     <option name="width" value="872" />
@@ -258,7 +260,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1673774" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16897655" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
@@ -271,7 +273,7 @@
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="8" weight="0.32934132" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.11822126" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.11822126" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32934132" />
       <window_info anchor="right" id="SciView" order="0" />
@@ -327,6 +329,9 @@
     <entry file="file://$PROJECT_DIR$/buzzer/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/buzzer/fixtures/buzz.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/buzzer/fixtures/user.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -337,17 +342,14 @@
     <entry file="file://$PROJECT_DIR$/buzzer/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
-          <caret line="25" column="58" lean-forward="true" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
+          <caret line="25" column="58" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/buzzer/fixtures/buzz.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/buzzer/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="649">
-          <caret line="66" column="19" lean-forward="true" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
+        <state relative-caret-position="425">
+          <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
             <marker date="1540148482867" expanded="true" signature="1433:1442" ph="..." />
@@ -360,13 +362,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/buzzer/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="127" column="66" selection-start-line="127" selection-start-column="66" selection-end-line="127" selection-end-column="66" />
+        <state relative-caret-position="544">
+          <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <marker date="1540148922274" expanded="true" signature="3987:3988" ph="..." />
-            <marker date="1540148922274" expanded="true" signature="4508:4925" ph="..." />
-            <marker date="1540148922274" expanded="true" signature="4755:4925" ph="..." />
+            <marker date="1540245053431" expanded="true" signature="3925:3926" ph="..." />
+            <marker date="1540245053431" expanded="true" signature="4423:4843" ph="..." />
+            <marker date="1540245053431" expanded="true" signature="4675:4843" ph="..." />
           </folding>
         </state>
       </provider>
