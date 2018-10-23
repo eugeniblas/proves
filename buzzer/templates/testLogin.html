@@ -14,7 +14,8 @@
     <h3>Hola {{ user.username }}! </h3>
   {% else %}
     <h3> Hola desconocido! </h3>
-  {% endif %}  
+  {% endif %}
+  <a href="{% url 'search' %}"> search </a>
 		
 </div>
 {% endblock %}

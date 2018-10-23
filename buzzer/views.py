@@ -75,3 +75,7 @@ def logoutView(request):
     # Redirect to a success page.
     return HttpResponseRedirect(reverse("index"))
 
+def searchView(request):
+    # Redirect to a success page.
+    return render(request, 'search.html')
+

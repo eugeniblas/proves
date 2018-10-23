@@ -1,0 +1,23 @@
+body {
+
+background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+
+}
+
+.navbar{
+	margin: 0px 0px 0px 0px;
+}
+
+
+#search_var {
+    background: #f8f8f8;
+    border-radius: 0px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    vertical-align: middle;
+}
+
+
+#search_nav {
+    background: #f8f8f8;
+}
