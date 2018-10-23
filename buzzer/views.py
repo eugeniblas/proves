@@ -96,7 +96,6 @@ def loginView(request):
     if user is not None:
         if user.is_active:  # Active user are not banned users
             login(request, user)
-            request.session.set_expiry(300);
             # Redirect to a success page.
             return HttpResponseRedirect(reverse('index'))
 
@@ -106,17 +105,34 @@ def loginView(request):
         # Show an error page
         return render(request, 'login.html')
 
+
 @login_required
 def logoutView(request):
     logout(request)
     # Redirect to a success page.
     return HttpResponseRedirect(reverse("index"))
 
+def profile(request, user=""):  # TEMPORAL
+    if request.method == "GET":
+        profile = User.objects.filter(username=user)
+        posts = Buzz.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+        form = PostForm()        
+        
+        args = {'posts': posts, 'form': form, 'profile': profile.first()}    
+        
+        return render(request, 'profile.html', args)
 
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.published_date = timezone.now()
+            post.save()                        
 
-def profile(request):  # TEMPORAL
-    return render(request, 'profile.html')
-
+            username = request.POST.get('current-profile', '/')
+            return HttpResponseRedirect(reverse("profile", kwargs={'user': username }))
+            #return HttpResponse()    
 
 def post_new(request):
     if request.method == "POST":

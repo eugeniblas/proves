@@ -37,8 +37,7 @@ class Profile (models.Model):
 
     def all_fields(self):
         data = self.all_fields_user()
-        data += "  screen_name: " + self.screen_name
-        data += "  screen_name: " + self.screen_name
+        data += "  screen_name: " + self.screen_name        
         data += "  location: " + self.location
         data += "  url: " + self.url
         data += "  bio: " + self.bio
@@ -63,7 +62,9 @@ class Buzz (models.Model):
     created_at = models.DateTimeField(default=datetime.now, blank=True) # creation date time
     published_date = models.DateTimeField(blank=True, null=True) # publication date time
     def __str__(self):
-        return(self.title)
+        #return(self.title)
+        return(self.text[:10])
+        
     def all_fields(self):        
         data = "id_buzz: " + str(self.id_buzz)
         data += "  id_user: " + str(self.user.id)

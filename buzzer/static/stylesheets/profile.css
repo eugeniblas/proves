@@ -4,23 +4,21 @@ background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
 font-family: 'Open Sans', sans-serif;
 }
 
-#profile-container {
-    width: 500px;
-    height: 600px;
+.container{
 
-    margin-left: 10px;
-    margin-right: 5px;
-    padding-top: 15px;
-    padding-right: 5px;
-    
-    border: 0px solid #ccc; /** 2px **/
-
-    float: left;
-
-   /** background-color: #fffcc9;**/
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 0px;    
 }
 
-.personal-info {
+/* ***** PROFILE CONTAINER ********** */
+
+.profile-container {
+
+    display: flex;
+    flex-direction: column;
+    align-self: baseline;
+
     background-color: #efb153;
     border: 2px solid black;
     border-radius: 10px;
@@ -32,10 +30,10 @@ font-family: 'Open Sans', sans-serif;
     padding-top: 10px;
     padding-right: 15px;
 
-    height: 300px;
+    width: 500px;
 }
 
-.personal-info .pfp {
+.profile-container .pfp {
     height: 50px;
     width: 50px;
     float: left;
@@ -47,41 +45,90 @@ font-family: 'Open Sans', sans-serif;
     border-radius: 30px;
 }
 
-.personal-info i {
+.profile-container .pfp:hover {
+    border: 2px solid black;
+}
+
+.profile-container i {
     
     margin-right: 10px;
     float: left;
 }
 
-.personal-info .bio {
+.profile-container .bio {
     text-align: justify;
 }
 
-.personal-info .names {
-    
-}
-
-.personal-info h4:hover {
+.profile-container h4:hover {
     font-weight: bold;
 }
 
-.personal-info a:link, .personal-info a:visited {
+.profile-container a:link, .profile-container a:visited {
     color: black;
     text-decoration: none;
 }
 
-#buzz-container {	
 
-    width: 40%;
-    min-width: 500px;
-    height: 325px;
-    border: 4px solid #ccc;
+/***  BUZZ CONTAINER ***/
 
-    margin-left: 30%;
+.buzz-container {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 800px;
+    min-height: 325px;
+    border: 4px solid #ccc;    
 
     background-color: #fffcc9;
 
-    padding-left: 50px;   
+    padding-left: 50px;
+    padding-right: 20px;
     padding-top: 15px;
+    padding-bottom: 15px;
+
+    margin-left: 20px;
+    margin-bottom: 40px;
+
+    flex-grow: 2;
+
 }
 
+.buzz-container .form-container {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px 20px;
+    background-color: #edbc40;
+}
+
+.buzz-container .form-container #id_text {
+    min-width: 100%;
+    min-height: 100px;
+    vertical-align: text-top;
+}
+
+.buzz {
+    border: 1px solid black;
+    margin-top: 10px;
+
+    padding: 10px;
+}
+
+.buzz-container h3 span {
+    font-weight: bold;
+}
+
+.buzz-container .pfp {
+    height: 50px;
+    width: 50px;
+    float: left;
+
+    margin-right: 10px;
+    margin-top: 10px;
+
+    border: 1px solid black;
+    border-radius: 30px;
+}
+
+.buzz-container .pfp:hover {
+    border: 2px solid black;
+}

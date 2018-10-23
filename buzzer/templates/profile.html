@@ -8,36 +8,65 @@
 
 <!-- BODY -->
 {% block content %}
-<div>
+<div class="container">
 <!-- PROFILE INFO -->
-<div id="profile-container">  
-  <div class="personal-info">
-    <a href="{% url 'profile' %}">
-      <img class="pfp" src="{% static "images/buzzer_logo.png" %}"></a>
-    <div class="names">
-      <a href="{% url 'profile' %}"><h4 class="username">{{user.username}}</h4></a>
-      <h5 class="usertag">@policia</h5>
+  <div class="profile-container">
+    <div class="basic-info">
+      <a href="{% url 'profile' %}">
+        <img class="pfp" src="{% static "images/buzzer_logo.png" %}"></a>
+      <div class="names">
+        <a href="{% url 'profile' %}"><h4 class="username">{{profile.profile.screen_name}}</h4></a>
+        <h5 class="usertag">@{{profile.username}}</h5>
+      </div>
     </div>
     <br>
     <div class="bio">
-      <p>Soy una cuenta de pruebas para ver cómo quedará cuando se haga desde la base de datos</p>
+      <p>{{profile.profile.bio}}</p>
+    </div>
+    <br>
+    <div class="url">
+      <i class="fas fa-link"></i>
+      <a href="http://{{profile.profile.url}}">{{profile.profile.url}}</a>
     </div>
     <div class="gps">
       <i class="fas fa-map-marker-alt"></i>
-      <p>Barcelona, Catalunya</p>
+      <p>{{profile.profile.location}}</p>
     </div>
     <div class="birthday">
       <i class="fas fa-birthday-cake"></i>
-      <p>Fecha de nacimiento: 19 de agosto de 1997</p>
+      <p>Fecha de nacimiento: {{profile.profile.birthday}}</p>
     </div>
   </div>
-</div>
-
 
 <!-- BUZZES -->
-<div id="buzz-container">
-	<h3>Inicia sesión en Buzzer</h3>
-	<br>
+<div class="buzz-container">
+	<div class="form-container">
+    <h3>Buzzea algo:</h3>
+    <form action="{% url 'profile' %}" method="POST" class="post-form" >{% csrf_token %}
+      {{ form.as_p }}
+      <input type="hidden" name="current-profile" value="{{ profile.username }}">
+      <button type="submit" class="save btn btn-default">Buzzear</button>
+    </form>
+  </div>    
+
+
+  <h3>Buzzs de <span>{{ profile.profile.screen_name }}<span></h3>
+  {% for buzz in posts %}
+  <div class="buzz">
+      <div class="basic-info">
+      <a href="{% url 'profile' %}">
+        <img class="pfp" src="{% static "images/buzzer_logo.png" %}"></a>
+      <div class="names">
+        <a href="{% url 'profile' %}"><h4 class="username">{{profile.profile.screen_name}}</h4></a>
+        <h5 class="usertag">@{{buzz.user.username}}</h5>
+      </div>
+    </div>
+    <br>
+    {{ buzz.text }}
+
+  </div>
+  {% endfor %}
+
 </div>
 </div>
 {% endblock %}
