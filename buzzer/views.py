@@ -149,25 +149,45 @@ def post_new(request):
     return render(request, 'post_edit.html', {'form': form})
 """
 
+
 def userSearch(request, search_text):
     usernameSearch = Profile.objects.filter(user__username__contains=search_text)
     profileSearch= Profile.objects.filter(screen_name__contains=search_text)
-    fullSearch = chain(usernameSearch, profileSearch)
+    fullSearch = usernameSearch | profileSearch
 
-    response = "<br> Users: <br>"
-    response += '<br> <li>' + '<li>'.join([str(s) for s in fullSearch]) + "</li> <br>"
+    response = [s for s in fullSearch]
     return response
 
 
 def buzzSearch(request, search_text):
     search = Buzz.objects.filter(text__contains=search_text)
 
-    response = "Buzzs: <br>"
-    response += '<br> <li>' + '<br> <li>'.join([str(s.all_fields()) for s in search]) + "</li> <br>"
+    response = [s for s in search]
     return response
 
 
 def searchView(request, search_text):
-    response = "Search: %s <br>" % search_text
-    response += userSearch(request, search_text) + buzzSearch(request, search_text)
+    '''
+    if request.method == "GET":
+        users = userSearch(request, search_text)
+        buzzs = buzzSearch(request, search_text)
+        form = PostForm()
+        args = {'form': form, 'users': users, 'buzzs': buzzs}
+
+        return render(request, 'search.html', args)
+    '''
+
+    users = userSearch(request, search_text)
+    buzzs = buzzSearch(request, search_text)
+    response = ""
+    for i in users:
+        response += str(i.user)
+
+    for i in buzzs:
+        response += str(i.text)
     return HttpResponse(response)
+
+
+
+
+

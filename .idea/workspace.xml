@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f63a6f02-e5e4-487f-891b-1a2a78036ae9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/buzzer/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/buzzer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/buzzer.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buzzer/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/buzzer/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buzzer/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/buzzer/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buzzer/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/buzzer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/buzzer/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buzzer/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/buzzer/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buzzer/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/buzzer/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buzzer/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/buzzer/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buzzer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/buzzer/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,11 +54,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/buzzer/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+            <state relative-caret-position="198">
+              <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="28" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -74,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/buzzer/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="171" column="83" selection-start-line="171" selection-start-column="83" selection-end-line="171" selection-end-column="83" />
+            <state relative-caret-position="214">
+              <caret line="177" column="7" selection-start-line="177" selection-start-column="7" selection-end-line="177" selection-end-column="7" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -101,8 +93,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/buzzer/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="26" column="67" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
+            <state relative-caret-position="420">
+              <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -120,9 +112,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/buzzer/views.py" />
         <option value="$PROJECT_DIR$/buzzer/urls.py" />
         <option value="$PROJECT_DIR$/buzzer/models.py" />
+        <option value="$PROJECT_DIR$/buzzer/views.py" />
       </list>
     </option>
   </component>
@@ -133,10 +125,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="536" />
-    <option name="y" value="4" />
-    <option name="width" value="872" />
-    <option name="height" value="735" />
+    <option name="x" value="67" />
+    <option name="y" value="27" />
+    <option name="width" value="1299" />
+    <option name="height" value="741" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -154,19 +146,7 @@
             <path>
               <item name="buzzer" type="b2602c69:ProjectViewProjectNode" />
               <item name="buzzer" type="462c0819:PsiDirectoryNode" />
-              <item name="buzzer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="buzzer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="buzzer" type="462c0819:PsiDirectoryNode" />
-              <item name="buzzer" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="buzzer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="buzzer" type="462c0819:PsiDirectoryNode" />
-              <item name="buzzer" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="EntornBuzzer" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -199,6 +179,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -254,37 +235,37 @@
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="14" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="6" />
+      <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3295082" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="16" show_stripe_button="false" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16897655" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.16897655" />
+      <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="TODO" order="8" weight="0.32934132" />
-      <window_info anchor="bottom" id="Run" order="4" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32934132" />
-      <window_info anchor="bottom" id="Find" order="3" />
-      <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.11822126" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="15" weight="0.32934132" />
+      <window_info anchor="bottom" id="Run" order="7" />
+      <window_info anchor="bottom" id="Python Console" order="19" weight="0.32934132" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="17" visible="true" weight="0.11822126" />
+      <window_info anchor="bottom" id="Event Log" order="18" side_tool="true" />
+      <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
       <window_info anchor="right" id="SciView" order="0" />
-      <window_info anchor="bottom" id="Message" order="2" />
+      <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="right" id="Database" order="1" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="5" side_tool="true" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -427,23 +408,6 @@
         <state relative-caret-position="-477" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/buzzer/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="171" column="83" selection-start-line="171" selection-start-column="83" selection-end-line="171" selection-end-column="83" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/buzzer/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="26" column="67" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/buzzer/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -454,12 +418,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/buzzer/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/buzzer/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+        <state relative-caret-position="198">
+          <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="28" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buzzer/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="177" column="7" selection-start-line="177" selection-start-column="7" selection-end-line="177" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
