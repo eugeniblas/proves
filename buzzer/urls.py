@@ -14,13 +14,17 @@ urlpatterns = [
     url(r'^logout/$', views.logoutView, name='logout'),
 
     # Database user profiles
-    url(r'^profiles/$', views.profiles, name='profiles'),
-    url(r'^profiles/(?P<user>.*)/$', views.profiles, name='profiles'),
+    #url(r'^profiles/$', views.profiles, name='profiles'),
+    #url(r'^profiles/(?P<user>.*)/$', views.profiles, name='profiles'),
 
     # Database buzzs
     url(r'^buzzs/$', views.buzzs, name='buzzs'),
     url(r'^buzzs/(?P<user>.*)/$', views.buzzs, name='buzzs'),
 
+    # Profile page
+    #url(r'^new_post/$', views.post_new, name='post_new'),
+    url(r'^profiles/$', views.profile, name='profile'),
+    url(r'^profile/(?P<user>.*)/$', views.profile, name='profile'),
 
     # Search
     url(r'^search/(?P<search_text>.*)/$', views.searchView, name='search')

@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.utils import timezone
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django import forms
@@ -7,13 +9,16 @@ from .models import Profile
 from .models import Buzz
 from django.contrib.auth import login, authenticate, logout
 from itertools import chain
-
+from .forms import PostForm
 
 
 # Create your views here.
 def index(request):
-    return render(request, 'testLogin.html')
-
+    if(request.user.is_authenticated):
+        form = PostForm()
+        return render(request, 'testLogin.html', {'form': form})
+    else :
+        return render(request, "signup.html")
 
 # List All Users or List one (username)
 def users(request, user=""):
@@ -55,7 +60,6 @@ def buzzs(request, user=""):
         response = response + '<BR> <li>' + '<BR> <li>'.join([Buzz.all_fields(buzz) for buzz in list_of_buzzs])
 
     return HttpResponse(response)
-
 
 
 def signupView(request):
@@ -102,35 +106,68 @@ def loginView(request):
         return render(request, 'login.html')
 
 
+@login_required
 def logoutView(request):
     logout(request)
     # Redirect to a success page.
     return HttpResponseRedirect(reverse("index"))
 
 
-def userSearch(request, search_text):
-    #user = User.objects.filter(username__contains=search_text)
-    usernameSearch = Profile.objects.filter(user__username__contains=search_text)
+def profile(request, user=""):  # TEMPORAL
+    if request.method == "GET":
+        profile = User.objects.filter(username=user)
+        posts = Buzz.objects.filter(published_date__lte=timezone.now()).order_by('published_date').filter(user__username=user)
+        form = PostForm()        
+        
+        args = {'posts': posts, 'form': form, 'profile': profile.first()}    
+        
+        return render(request, 'profile.html', args)
 
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.published_date = timezone.now()
+            post.save()                        
+
+            return HttpResponseRedirect(reverse("profile", kwargs={'user': user}))
+
+"""
+@login_required
+def post_new(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return render(request,'testLogin.html')
+    else:
+        form = PostForm()
+    return render(request, 'post_edit.html', {'form': form})
+"""
+
+def userSearch(request, search_text):
+    usernameSearch = Profile.objects.filter(user__username__contains=search_text)
     profileSearch= Profile.objects.filter(screen_name__contains=search_text)
     fullSearch = chain(usernameSearch, profileSearch)
+
     response = "<br> Users: <br>"
     response += '<br> <li>' + '<li>'.join([str(s) for s in fullSearch]) + "</li> <br>"
-
     return response
 
 
 def buzzSearch(request, search_text):
     search = Buzz.objects.filter(text__contains=search_text)
+
     response = "Buzzs: <br>"
     response += '<br> <li>' + '<br> <li>'.join([str(s.all_fields()) for s in search]) + "</li> <br>"
-
     return response
 
 
 def searchView(request, search_text):
     response = "Search: %s <br>" % search_text
-
     response += userSearch(request, search_text) + buzzSearch(request, search_text)
-
     return HttpResponse(response)
