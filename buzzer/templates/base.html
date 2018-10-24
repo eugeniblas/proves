@@ -21,6 +21,9 @@
 
 </head>
 <body>
+	<div id="unfocus-div"></div>
+
+	<!-- NAVBAR -->
 	{% block navbar %}
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">
@@ -38,8 +41,9 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">      
 	  		<ul class="nav navbar-nav navbar-right">
-	    	{% if user.is_authenticated %}
-	    		<li><a href="{% url 'profile' user=user.username %}">{{ user.username }}</a></li> <!-- THIS NEEDS TO BE FIXED WHEN THE URLS FOR PROFILES ARE SET -->
+	    	{% if user.is_authenticated %}	   
+	    		<li><a href="{% url 'profile' user=user.username %}">{{ user.username }}</a></li>
+	    		<li id="buzz-button"><a>Buzzear</a></li>
 	        	<li><a href="{% url 'logout' %}">Logout</a></li>
 	        {% else %}
 	      		<li><a href="{% url 'login' %}">Login</a></li>              
@@ -50,10 +54,21 @@
 	  </div><!-- /.container-fluid -->
 	</nav>
 	{% endblock %}
+	
 
-	{% block content %}
+	<!-- FORM NEW BUZZ -->
+	{% block new_buzz %}
+	<div class="invisible form-container">
+	    <h3>Buzzea algo:</h3>
+	    <form action="{% url 'profile' user=user.username %}" method="POST" class="post-form" >{% csrf_token %}
+	      {{ form.as_p }}
+	      <button type="submit" class="save btn btn-default">Buzzear</button>
+	    </form>
+	</div>
 	{% endblock %}
-
+	
+	<!-- ACTUAL CONTENT -->
+	{% block content %}{% endblock %}
 
 	<script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -62,5 +77,7 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="{% static "scripts/navbar.js" %}"></script>
 </body>	
 </html>

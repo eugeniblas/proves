@@ -15,7 +15,8 @@ from .models import Buzz
 # Create your views here.
 def index(request):
     if(request.user.is_authenticated):
-        return render(request, 'testLogin.html')
+        form = PostForm()
+        return render(request, 'testLogin.html', {'form': form})
     else :
         return render(request, "signup.html")
 
@@ -61,7 +62,6 @@ def buzzs(request, user=""):
     return HttpResponse(response)
 
 
-
 def signupView(request):
 
     if request.method == 'POST':
@@ -87,7 +87,6 @@ def signupView(request):
 
     else:
         return render(request, "signup.html")
-
 
 def loginView(request):
     username = request.POST.get('username', '')    
@@ -115,7 +114,7 @@ def logoutView(request):
 def profile(request, user=""):  # TEMPORAL
     if request.method == "GET":
         profile = User.objects.filter(username=user)
-        posts = Buzz.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+        posts = Buzz.objects.filter(published_date__lte=timezone.now()).order_by('published_date').filter(user__username=user)
         form = PostForm()        
         
         args = {'posts': posts, 'form': form, 'profile': profile.first()}    
@@ -130,10 +129,10 @@ def profile(request, user=""):  # TEMPORAL
             post.published_date = timezone.now()
             post.save()                        
 
-            username = request.POST.get('current-profile', '/')
-            return HttpResponseRedirect(reverse("profile", kwargs={'user': username }))
-            #return HttpResponse()    
+            return HttpResponseRedirect(reverse("profile", kwargs={'user': user }))
 
+"""
+@login_required
 def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
@@ -146,8 +145,4 @@ def post_new(request):
     else:
         form = PostForm()
     return render(request, 'post_edit.html', {'form': form})
-    
-#View where we'll have all our posts
-def post_list(request):
-    posts = Buzz.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'post_list.html', {'posts': posts})
+"""

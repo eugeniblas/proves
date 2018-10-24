@@ -12,10 +12,10 @@
 <!-- PROFILE INFO -->
   <div class="profile-container">
     <div class="basic-info">
-      <a href="{% url 'profile' %}">
+      <a href="{% url 'profile' user=profile.username %}">
         <img class="pfp" src="{% static "images/buzzer_logo.png" %}"></a>
       <div class="names">
-        <a href="{% url 'profile' %}"><h4 class="username">{{profile.profile.screen_name}}</h4></a>
+        <a href="{% url 'profile' user=profile.username %}"><h4 class="username">{{profile.profile.screen_name}}</h4></a>
         <h5 class="usertag">@{{profile.username}}</h5>
       </div>
     </div>
@@ -40,29 +40,21 @@
 
 <!-- BUZZES -->
 <div class="buzz-container">
-	<div class="form-container">
-    <h3>Buzzea algo:</h3>
-    <form action="{% url 'profile' %}" method="POST" class="post-form" >{% csrf_token %}
-      {{ form.as_p }}
-      <input type="hidden" name="current-profile" value="{{ profile.username }}">
-      <button type="submit" class="save btn btn-default">Buzzear</button>
-    </form>
-  </div>    
-
-
   <h3>Buzzs de <span>{{ profile.profile.screen_name }}<span></h3>
   {% for buzz in posts %}
   <div class="buzz">
       <div class="basic-info">
-      <a href="{% url 'profile' %}">
+      <a href="{% url 'profile' user=buzz.user.username %}">
         <img class="pfp" src="{% static "images/buzzer_logo.png" %}"></a>
       <div class="names">
-        <a href="{% url 'profile' %}"><h4 class="username">{{profile.profile.screen_name}}</h4></a>
+        <a href="{% url 'profile' user=buzz.user.username %}"><h4 class="username">{{buzz.user.profile.screen_name}}</h4></a>
         <h5 class="usertag">@{{buzz.user.username}}</h5>
       </div>
     </div>
     <br>
     {{ buzz.text }}
+    <br>
+    <div class="buzz-date">{{ buzz.created_at }} </div>
 
   </div>
   {% endfor %}

@@ -8,10 +8,9 @@ urlpatterns = [
     url(r'^signup/$', views.signupView, name='signup'),
     url(r'^login/$', views.loginView, name='login'),    
     url(r'^logout/$', views.logoutView, name='logout'),
-    url(r'^new_post/$', views.post_new, name='post_new'),
-    url(r'^post_list/$', views.post_list, name='post_list'),
+    #url(r'^new_post/$', views.post_new, name='post_new'),
     url(r'^profiles/$', views.profile, name='profile'),
-    url(r'^profiles/(?P<user>.*)/$', views.profile, name='profile'),    
+    url(r'^profile/(?P<user>.*)/$', views.profile, name='profile'),    
     url(r'^buzzs/$', views.buzzs, name='buzzs'),
     url(r'^buzzs/(?P<user>.*)/$', views.buzzs, name='buzzs')   
 ]

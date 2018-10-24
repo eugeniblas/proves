@@ -132,3 +132,8 @@ font-family: 'Open Sans', sans-serif;
 .buzz-container .pfp:hover {
     border: 2px solid black;
 }
+
+.buzz-container .buzz-date {
+    font-style: italic;
+    text-align: right;
+}

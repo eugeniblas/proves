@@ -11,13 +11,7 @@
 
 <div id="login-container">
   {% if user.is_authenticated %}
-
-
     <h3>Hola {{ user.username }}! </h3>
-	  <!-- Test to see if works create post , save it and visualize it  -->
-	<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus">New Post</span></a>
-	<p></p>
-	<a href="{% url 'post_list' %}" class="top-menu">YOUR POSTS</a>
   {% else %}
     <h3> Hola desconocido! </h3>
   {% endif %}  
