@@ -1,31 +1,70 @@
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import datetime 
 
 
-# Model Buser:  User for Buzzer
-#   Buser has all attributes of User:
-#   	username: it must begin with '@' !!!
-#       first_name
-#	last_name
-#	email
-#       password 
-#       groups
-#       user_permissions
-#	is_staff
-#	is_active
-#	is_superuser
-#	last_login
-#	date_joined
+# User:  auth_user (contrib.auth.User)
+#   user of Buzzer
+#   attributes of User:
+#     id (integer- primary key - autoincrement)
+#     username (varchar(128) - not null)
+#     first_name (varchar(30) - not null)
+#     last_name (varchar(150) . not null)
+#     email (varchar(254) - not null)
+#     password (varchar(128) - not null)
+#     is_staff (boolean - not null)
+#     is_active (boolean - not null)
+#     is_superuser (boolean - not null)
+#     last_login (datetime - null)
+#     date_joined (datetime - null)
 
-class Buser (models.Model):
+
+# Profile: buzzer_profile
+#   extension User (one to one)
+class Profile (models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    screen_name = models.CharField(max_length=150)  # name that appears on screen
+    screen_name = models.CharField(max_length=50)  # name that appears on screen (complementary username)    
     location = models.CharField(max_length=150)  # defined location for user account’s profile
     url = models.CharField(max_length=150)  # URL provided by the user in association with their profile
-    lang = models.CharField(max_length=150) # The BCP 47 code for the user’s self-declared user interface language
+    bio = models.CharField(max_length=150) # general information about user 
+    birthday = models.DateField(auto_now=False, auto_now_add=False,null=True) # user's birthday     
     def __str__(self):
         return(self.user.username + " - " + self.screen_name + " - " + self.user.first_name + " - " + self.user.last_name)
     def all_fields(self):
-        return("username: " + self.user.username + "  password: " + self.user.password)
+        data = self.all_fields_user()
+        data += "  screen_name: " + self.screen_name  
+        data += "  location: " + self.location
+        data += "  url: " + self.url
+        data += "  bio: " + self.bio
+        data += "  birthday: " + str(self.birthday)
+        return(data)
+    def all_fields_user(self):
+        data = "key: " + str(self.user.id)
+        data += "  username: " + self.user.username + "  password: " + self.user.password
+        data += " first name: " + self.user.first_name + " last name: " + self.user.last_name
+        data += " email: " + self.user.email
+        return(data)
+
+# Buz: buzzer_buz
+#   posts of buzzer
+class Buzz (models.Model):
+    id_buzz = models.AutoField(primary_key=True) # id of buzz: automatic incremental
+    user = models.ForeignKey(User, on_delete=models.CASCADE) # id of user who creates the buzz
+    text = models.CharField(max_length=140) # text of the buzz
+    created_at = models.DateTimeField(default=datetime.now, blank=True) # creation date time
+    published_date = models.DateTimeField(blank=True, null=True) # publication date time
+    def __str__(self):
+        return(self.title)
+    def all_fields(self):        
+        data = "id_buzz: " + str(self.id_buzz)
+        data += "  id_user: " + str(self.user.id)
+        data += "  text: " + self.text
+        data += "  created_at: " + str(self.created_at)
+        data += "  published_date: " + str(self.published_date)		
+        return(data)
+    def published(self):
+        self.published_data = timezone.now()
+        self.save()
+    
 
 
