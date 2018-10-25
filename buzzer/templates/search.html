@@ -13,8 +13,54 @@
 </div>
 
 <ul class="nav nav-tabs" id="search_nav">
-  <li class="active"><a href="#">Home</a></li>
-  <li><a href="#">Menu 1</a></li>
+  <li class="active"><a href="#">BUZZERS</a></li>
+  <li><a href="#">USERS</a></li>
 </ul>
+
+<div id="tab_buzzers" >
+  <div class="buzz-container">
+    {% for buzz in posts %}
+    <div class="buzz">
+        <div class="basic-info">
+          <a href="{% url 'profile' user=buzz.user.username %}">
+            <img class="pfp" src="{% static "images/buzzer_logo.png" %}"></a>
+          <div class="names">
+            <a href="{% url 'profile' user=buzz.user.username %}"><h4 class="username">{{buzz.user.profile.screen_name}}</h4></a>
+            <h5 class="usertag">@{{buzz.user.username}}</h5>
+          </div>
+        </div>
+        <br>
+        {{ buzz.text }}
+        <br>
+        <div class="buzz-date">{{ buzz.created_at }} </div>
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+
+
+<div id="tab_users" >
+  <div class="buzz-container">
+    {% for buzz in posts %}
+    <div class="buzz">
+        <div class="basic-info">
+          <a href="{% url 'profile' user=buzz.user.username %}">
+            <img class="pfp" src="{% static "images/buzzer_logo.png" %}"></a>
+          <div class="names">
+            <a href="{% url 'profile' user=buzz.user.username %}"><h4 class="username">{{buzz.user.profile.screen_name}}</h4></a>
+            <h5 class="usertag">@{{buzz.user.username}}</h5>
+          </div>
+        </div>
+        <br>
+        {{ buzz.text }}
+        <br>
+        <div class="buzz-date">{{ buzz.created_at }} </div>
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
 
 {% endblock %}
