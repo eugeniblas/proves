@@ -99,17 +99,8 @@ def buzzSearch(request, search_text):
     return response
 
 
-def searchView(request, search_text):
-    '''
-    if request.method == "GET":
-        users = userSearch(request, search_text)
-        buzzs = buzzSearch(request, search_text)
-        form = PostForm()
-        args = {'form': form, 'users': users, 'buzzs': buzzs}
-
-        return render(request, 'search.html', args)
-    '''
-
+def searchView(request):
+    search_text = request.POST.get('search_text')
     users = userSearch(request, search_text)
     buzzs = buzzSearch(request, search_text)
     response = ""
@@ -118,5 +109,5 @@ def searchView(request, search_text):
 
     for i in buzzs:
         response += str(i.text)
-    return HttpResponse(response)
+    return render(request, 'search.html')
 
