@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.utils import timezone
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django import forms
@@ -7,12 +9,19 @@ from django.contrib import messages
 from .models import Profile
 from .models import Buzz
 from django.contrib.auth import login, authenticate, logout
+from itertools import chain
+from .forms import PostForm
 
 
 # Create your views here.
 def index(request):
-    return render(request, 'testLogin.html')
+    if(request.user.is_authenticated):
+        form = PostForm()
+        return render(request, 'testLogin.html', {'form': form})
+    else :
+        return render(request, "signup.html")
 
+      
 def signupView(request):
 
     if request.method == 'POST':
@@ -68,12 +77,46 @@ def loginView(request):
         return render(request, 'login.html')
 
 
+@login_required
 def logoutView(request):
     logout(request)
     # Redirect to a success page.
     return HttpResponseRedirect(reverse("index"))
 
-def searchView(request):
-    # Redirect to a success page.
-    return render(request, 'search.html')
+def userSearch(request, search_text):
+    usernameSearch = Profile.objects.filter(user__username__contains=search_text)
+    profileSearch= Profile.objects.filter(screen_name__contains=search_text)
+    fullSearch = usernameSearch | profileSearch
+
+    response = [s for s in fullSearch]
+    return response
+
+
+def buzzSearch(request, search_text):
+    search = Buzz.objects.filter(text__contains=search_text)
+
+    response = [s for s in search]
+    return response
+
+
+def searchView(request, search_text):
+    '''
+    if request.method == "GET":
+        users = userSearch(request, search_text)
+        buzzs = buzzSearch(request, search_text)
+        form = PostForm()
+        args = {'form': form, 'users': users, 'buzzs': buzzs}
+
+        return render(request, 'search.html', args)
+    '''
+
+    users = userSearch(request, search_text)
+    buzzs = buzzSearch(request, search_text)
+    response = ""
+    for i in users:
+        response += str(i.user)
+
+    for i in buzzs:
+        response += str(i.text)
+    return HttpResponse(response)
 
