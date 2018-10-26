@@ -1,5 +1,9 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
 .navbar{
-	z-index: 2;
+	z-index: 5;
 }
 
 .navbar-brand {
@@ -10,4 +14,51 @@
 .navbar-brand #buzzer-logo{
 	width: 45px;
 	height: 45px;
+}
+
+
+.invisible {
+	display: none;
+}
+
+.form-container {
+	position: absolute;
+	top: 25%;
+	left: 35%;
+
+    border: 2px solid black;
+    border-radius: 10px;
+
+    padding: 20px 20px;
+    
+    background-color: #edbc40;
+
+    width: 600px;
+
+    z-index: 3;
+}
+
+.form-container #id_text {
+    min-width: 100%;
+    min-height: 100px;
+    vertical-align: text-top;
+}
+
+#buzz-button {
+	cursor: pointer;
+}
+
+.unfocus {
+	position: absolute;
+
+	left: 0;
+	top: 0;
+
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.3);
+
+	z-index: 2;
+
+	overflow: auto;
 }

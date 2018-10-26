@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.utils import timezone
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django import forms
@@ -6,12 +8,17 @@ from django.contrib.auth.models import User
 from .models import Profile
 from .models import Buzz
 from django.contrib.auth import login, authenticate, logout
+from .forms import PostForm
+from .models import Buzz
 
 
 # Create your views here.
 def index(request):
-    return render(request, 'testLogin.html')
-
+    if(request.user.is_authenticated):
+        form = PostForm()
+        return render(request, 'testLogin.html', {'form': form})
+    else :
+        return render(request, "signup.html")
 
 # List All Users or List one (username)
 def users(request, user=""):
@@ -55,7 +62,6 @@ def buzzs(request, user=""):
     return HttpResponse(response)
 
 
-
 def signupView(request):
 
     if request.method == 'POST':
@@ -82,7 +88,6 @@ def signupView(request):
     else:
         return render(request, "signup.html")
 
-
 def loginView(request):
     username = request.POST.get('username', '')    
     password = request.POST.get('password', '')    
@@ -100,8 +105,44 @@ def loginView(request):
         return render(request, 'login.html')
 
 
+@login_required
 def logoutView(request):
     logout(request)
     # Redirect to a success page.
     return HttpResponseRedirect(reverse("index"))
 
+def profile(request, user=""):  # TEMPORAL
+    if request.method == "GET":
+        profile = User.objects.filter(username=user)
+        posts = Buzz.objects.filter(published_date__lte=timezone.now()).order_by('published_date').filter(user__username=user)
+        form = PostForm()        
+        
+        args = {'posts': posts, 'form': form, 'profile': profile.first()}    
+        
+        return render(request, 'profile.html', args)
+
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.published_date = timezone.now()
+            post.save()                        
+
+            return HttpResponseRedirect(reverse("profile", kwargs={'user': user }))
+
+"""
+@login_required
+def post_new(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return render(request,'testLogin.html')
+    else:
+        form = PostForm()
+    return render(request, 'post_edit.html', {'form': form})
+"""
