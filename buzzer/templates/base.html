@@ -8,9 +8,12 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <!-- (BOOTSTRAP OPTIONAL THEME) -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- FONT AWESOME 5.4.1 -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
 <!-- FONT AWESOME 5.4.1 -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
@@ -40,11 +43,34 @@
 	      </button>
 	      <a class="navbar-brand" href="{% url 'index' %}"><img id="buzzer-logo" src="{% static "images/buzzer_logo.png" %}"></a>
 	    </div>
-
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">      
+	  		<ul class="nav navbar-nav navbar-right">
+	    	{% if user.is_authenticated %}	   
+	    		<li><a href="{% url 'profile' user=user.username %}">{{ user.username }}</a></li>
+	    		<li id="buzz-button"><a>Buzzear</a></li>
+	        	<li><a href="{% url 'logout' %}">Logout</a></li>
+	        {% else %}
+	      		<li><a href="{% url 'login' %}">Login</a></li>              
+	      		<li><a href="{% url 'signup' %}">Sign up</a></li>
+	        {% endif %}          
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
 	{% endblock %}
+	
 
+	<!-- FORM NEW BUZZ -->
+	{% block new_buzz %}
+	<div class="invisible form-container">
+	    <h3>Buzzea algo:</h3>
+	    <form action="{% url 'profile' user=user.username %}" method="POST" class="post-form" >{% csrf_token %}
+	      {{ form.as_p }}
+	      <button type="submit" class="save btn btn-default">Buzzear</button>
+	    </form>
+	</div>
+	{% endblock %}
 	
 	<!-- ACTUAL CONTENT -->
 	{% block content %}{% endblock %}
