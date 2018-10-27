@@ -20,8 +20,8 @@
 </div>
 
 <ul class="nav nav-tabs" id="search_nav">
-  <li class="active"><a href="javascript:changeBlockView($(this))" data-toggle="tab" id="buzzs-button">BUZZERS</a></li>
-  <li><a href="#user-button" data-toggle="tab" id="user-button">USERS</a></li>
+  <li class="active"><a onclick="changeBlockView('buzzs-button')" data-toggle="tab" id="buzzs-button">BUZZERS</a></li>
+  <li><a onclick="changeBlockView('users-button')" data-toggle="tab" id="users-button">USERS</a></li>
 </ul>
 <div id="last_tab"></div>
 
@@ -49,7 +49,7 @@
 
 </div>
 
-<div class="buzz-container" id="user-container" style="display: none" >
+<div class="buzz-container" id="users-container" style="display: none" >
     {% if not users %}
         <h3>No results in users for:<br>  -->{{ search_text }}</h3>
     {% else %}
@@ -94,25 +94,19 @@
 {% block moreJavascript %}
 <script type="text/javascript">
 
-    function changeBlockView($element) {
-        var parent = $element.parent();
-        console.log(parent.id);
-        if ($(this).parent('id') === "users") {
+    function changeBlockView($id) {
 
-            $("#users").addClass("active");
-            $("#buzzers").removeClass("active");
-            console.log("llega");
-            $("#tab_users").removeAttr('style'); //css("display:");
-            console.log("llega");
-            $("#tab_buzzers").css("display: none");
+        if ($id === "buzzs-button") {
+
+            document.getElementById("buzzers-container").style.display = "inline-block";
+            document.getElementById("users-container").style.display = "none";
 
         }
-        else if ($(this).parent('id') === "buzzers") {
-            console.log("llega");
-            $("#users").removeClass("active");
-            $("#buzzers").addClass("active");
-            $("#tab_users").css("display: none");
-            $("#tab_buzzers").removeAttr('style');
+        else if ($id === "users-button") {
+
+            document.getElementById("buzzers-container").style.display = "none";
+            document.getElementById("users-container").style.display = "inline-block";
+
         }
 
     }
