@@ -12,10 +12,15 @@ urlpatterns = [
     # Search
     url(r'^search/$', views.searchView, name='search'),
     
-    #Extras
+    # Extras
     #url(r'^new_post/$', views.post_new, name='post_new'),
-    url(r'^profiles/$', views.profile, name='profile'),
-    url(r'^profile/(?P<user>.*)/$', views.profile, name='profile'),    
+     url(r'^profile/(?P<user>.*)/$', views.profile, name='profile'),   
+
+    # Browser DBs
+    url(r'^users/$', views.users, name='users'),
+    url(r'^users/(?P<user>.*)/$', views.users, name='users'),  
+    url(r'^profiles/$', views.profiles, name='profiles'),
+    url(r'^profiles/(?P<user>.*)/$', views.profiles, name='profiles'),    
     url(r'^buzzs/$', views.buzzs, name='buzzs'),
     url(r'^buzzs/(?P<user>.*)/$', views.buzzs, name='buzzs')
 ]

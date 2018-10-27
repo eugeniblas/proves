@@ -30,7 +30,7 @@
   
 
 *******************************************************************************
-*  Browse data
+*  Browse data (ONLY user admin)
 *     1. Browse list of all users
 *     2. Browse one user (username)
 *     3. Browse list of all users+profiles
