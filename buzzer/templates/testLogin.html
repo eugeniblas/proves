@@ -14,7 +14,14 @@
     <h3>Hola {{ user.username }}! </h3>
   {% else %}
     <h3> Hola desconocido! </h3>
-  {% endif %}  
+  {% endif %}
+  <form action="{% url 'search' %}" method="post">
+    {% csrf_token %}
+    Search Text<br>
+    <input type="text" name="search_text" value="Mickey">
+    <br><br>
+    <input type="submit" value="Submit">
+  </form>
 		
 </div>
 {% endblock %}

@@ -31,9 +31,9 @@ class Profile (models.Model):
     url = models.CharField(max_length=150)  # URL provided by the user in association with their profile
     bio = models.CharField(max_length=150) # general information about user 
     birthday = models.DateField(auto_now=False, auto_now_add=False,null=True) # user's birthday     
-
     def __str__(self):
         return(self.user.username + " - " + self.screen_name + " - " + self.user.first_name + " - " + self.user.last_name)
+
 
     def all_fields(self):
         data = self.all_fields_user()
@@ -44,12 +44,15 @@ class Profile (models.Model):
         data += "  birthday: " + str(self.birthday)
         return(data)
 
+
     def all_fields_user(self):
         data = "key: " + str(self.user.id)
         data += "  username: " + self.user.username + "  password: " + self.user.password
         data += " first name: " + self.user.first_name + " last name: " + self.user.last_name
         data += " email: " + self.user.email
-        return(data)
+        return data
+
+
 
 
 # Buz: buzzer_buz
@@ -60,6 +63,7 @@ class Buzz (models.Model):
     text = models.TextField(max_length=140) # text of the buzz
     created_at = models.DateTimeField(default=datetime.now, blank=True) # creation date time
     published_date = models.DateTimeField(blank=True, null=True) # publication date time
+
     def __str__(self):
         #return(self.title)
         return(self.text[:10])
@@ -70,7 +74,8 @@ class Buzz (models.Model):
         data += "  text: " + self.text
         data += "  created_at: " + str(self.created_at)
         data += "  published_date: " + str(self.published_date)		
-        return(data)
+        return data
+
     def published(self):
         self.published_data = timezone.now()
         self.save()
