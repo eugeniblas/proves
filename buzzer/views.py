@@ -143,15 +143,14 @@ def buzzSearch(request, search_text):
 
 def searchView(request):
     search_text = request.POST.get('search_text')
-    users = userSearch(request, search_text)
-    buzzs = buzzSearch(request, search_text)
-    response = ""
-    for i in users:
-        response += str(i.user)
 
-    for i in buzzs:
-        response += str(i.text)
-    return render(request, 'search.html')
+    if request.method == "POST":
+        users = userSearch(request, search_text)
+        buzzs = buzzSearch(request, search_text)
+        args = {'users': users, 'buzzs': buzzs, 'search_text': search_text}
+        return render(request, 'search.html', args)
+    return render(request,'search.html')
+
 
 def profile(request, user=""):  # TEMPORAL
     if request.method == "GET":

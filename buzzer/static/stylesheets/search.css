@@ -17,31 +17,26 @@ background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
     vertical-align: middle;
 }
 
+#search_text {
+    margin: 10px 10px 10px 10px;
+}
+
 
 #search_nav {
     background: #f8f8f8;
 }
 
+.container{
+
+    margin-left: 0px;
+}
+
 /***  BUZZ CONTAINER ***/
 
-#tab_buzzers {
-    z-index: 1;
-    position: relative;
-    visibility: hidden;
-}
-
-#tab_users {
-    z-index: 2;
-    position: relative;
-    visibility: visible;
-}
-
 .buzz-container {
-    display: flex;
-    flex-direction: column;
 
+    width: 100%;
     min-width: 800px;
-    min-height: 325px;
     border: 4px solid #ccc;
 
     background-color: #fffcc9;
@@ -51,10 +46,6 @@ background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
     padding-top: 15px;
     padding-bottom: 15px;
 
-    margin-left: 20px;
-    margin-bottom: 40px;
-
-    flex-grow: 2;
 
 }
 

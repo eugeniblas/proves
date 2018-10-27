@@ -10,58 +10,83 @@
 {% block content %}
 
 <div class="panel panel-default" id="search_var">
-  <h3>SEARCH</h3>
+    <div id="search_text">
+        {% if not search_text  %}
+            <h3>SEARCH: --</h3>
+        {% else %}
+            <h3>SEARCH: {{ search_text }}</h3>
+        {% endif %}
+    </div>
 </div>
 
 <ul class="nav nav-tabs" id="search_nav">
-  <li class="active" id="buzzers1" ><a id="buzzers" href="javascript:changeBlockView($(this))">BUZZERS</a></li>
-  <li  ><a id="users" href="javascript:changeBlockView($(this))">USERS</a></li>
+  <li class="active"><a href="javascript:changeBlockView($(this))" data-toggle="tab" id="buzzs-button">BUZZERS</a></li>
+  <li><a href="#user-button" data-toggle="tab" id="user-button">USERS</a></li>
 </ul>
+<div id="last_tab"></div>
 
-<div id="tab_buzzers" style="display: none">
-  <div class="buzz-container">
-    {% for buzz in posts %}
-    <div class="buzz">
-        <div class="basic-info">
-          <a href="{% url 'profile' user=buzz.user.username %}">
-            <img class="pfp" src="{% static "images/buzzer_logo.png" %}"></a>
-          <div class="names">
-            <a href="{% url 'profile' user=buzz.user.username %}"><h4 class="username">{{buzz.user.profile.screen_name}}</h4></a>
-            <h5 class="usertag">@{{buzz.user.username}}</h5>
-          </div>
-        </div>
-        <br>
-        {{ buzz.text }}
-        <br>
-        <div class="buzz-date">{{ buzz.created_at }} </div>
-    </div>
-    {% endfor %}
+<div class="buzz-container" id="buzzers-container">
+    {% if not buzzs %}
+        <h3>No results in buzzs for:<br>  -->{{ search_text }}</h3>
+    {% else %}
+        {% for buzz in buzzs %}
+            <div class="buzz">
+                <div class="basic-info">
+                    <a href="{% url 'profile' user=buzz.user.username %}">
+                        <img class="pfp" src="{% static "images/buzzer_logo.png" %}"></a>
+                    <div class="names">
+                        <a href="{% url 'profile' user=buzz.user.username %}"><h4 class="username">{{buzz.user.profile.screen_name}}</h4></a>
+                        <h5 class="usertag">@{{buzz.user.username}}</h5>
+                    </div>
+                </div>
+                <br>
+                {{ buzz.text }}
+                <br>
+                <div class="buzz-date">{{ buzz.created_at }} </div>
+            </div>
+        {% endfor %}
+    {% endif %}
 
-  </div>
 </div>
 
+<div class="buzz-container" id="user-container" style="display: none" >
+    {% if not users %}
+        <h3>No results in users for:<br>  -->{{ search_text }}</h3>
+    {% else %}
+        {% for profile in users %}
+            <div class="buzz">
+                <div class="basic-info">
+                    <a href="{% url 'profile' user=profile.user.username %}">
+                        <img class="pfp" src="{% static "images/buzzer_logo.png" %}"></a>
+                    <div class="names">
+                        <a href="{% url 'profile' user=profile.user.username %}"><h4 class="username">{{ profile.user.first_name}} {{ profile.user.last_name }}</h4></a>
+                        <h5 class="usertag">@{{profile.user.username}}</h5>
+                    </div>
+                </div>
+                <br>
+                {% if profile.bio %}
+                    {{ profile.bio }}
+                    <br>
+                {% endif %}
 
+                {% if profile.url %}
+                    {{ profile.url }}
+                    <br>
+                {% endif %}
 
-<div id="tab_users" >
-  <div class="buzz-container">
-    {% for buzz in posts %}
-    <div class="buzz">
-        <div class="basic-info">
-          <a href="{% url 'profile' user=buzz.user.username %}">
-            <img class="pfp" src="{% static "images/buzzer_logo.png" %}"></a>
-          <div class="names">
-            <a href="{% url 'profile' user=buzz.user.username %}"><h4 class="username">{{buzz.user.profile.screen_name}}</h4></a>
-            <h5 class="usertag">@{{buzz.user.username}}</h5>
-          </div>
-        </div>
-        <br>
-        PEEEEEEEEEEEEEEEEEEEEEEEEEEENE
-        <br>
-        <div class="buzz-date">{{ buzz.created_at }} </div>
-    </div>
-    {% endfor %}
+                {% if profile.birthday %}
+                    {{ profile.birthday }}
+                    <br>
+                {% endif %}
 
-  </div>
+                {% if profile.location %}
+                    {{ profile.location }}
+                    <br>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% endif %}
+
 </div>
 
 {% endblock %}
