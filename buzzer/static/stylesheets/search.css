@@ -1,0 +1,95 @@
+body {
+
+background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+
+}
+
+.navbar{
+	margin: 0px 0px 0px 0px;
+}
+
+
+#search_var {
+    background: #f8f8f8;
+    border-radius: 0px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    vertical-align: middle;
+}
+
+#search_text {
+    margin: 10px 10px 10px 10px;
+}
+
+
+#search_nav {
+    background: #f8f8f8;
+}
+
+.container{
+
+    margin-left: 0px;
+}
+
+/***  BUZZ CONTAINER ***/
+
+.buzz-container {
+
+    width: 100%;
+    min-width: 800px;
+    border: 4px solid #ccc;
+
+    background-color: #fffcc9;
+
+    padding-left: 50px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+
+}
+
+.buzz-container .form-container {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px 20px;
+    background-color: #edbc40;
+}
+
+.buzz-container .form-container #id_text {
+    min-width: 100%;
+    min-height: 100px;
+    vertical-align: text-top;
+}
+
+.buzz {
+    border: 1px solid black;
+    margin-top: 10px;
+
+    padding: 10px;
+}
+
+.buzz-container h3 span {
+    font-weight: bold;
+}
+
+.buzz-container .pfp {
+    height: 50px;
+    width: 50px;
+    float: left;
+
+    margin-right: 10px;
+    margin-top: 10px;
+
+    border: 1px solid black;
+    border-radius: 30px;
+}
+
+.buzz-container .pfp:hover {
+    border: 2px solid black;
+}
+
+.buzz-container .buzz-date {
+    font-style: italic;
+    text-align: right;
+}
