@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from datetime import datetime 
 
-
+# provaci
 # User:  auth_user (contrib.auth.User)
 #   user of Buzzer
 #   attributes of User:
