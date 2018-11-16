@@ -22,7 +22,6 @@ def index(request):
     else :
         return render(request, "signup.html")
 
-# List All Users or List one (username)
 def users(request, user=""):
     response = "You aren't admin"
     if request.user.is_superuser:
