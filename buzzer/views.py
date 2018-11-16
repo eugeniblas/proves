@@ -13,7 +13,7 @@ def index(request):
     return HttpResponse("Hello, this is Buzzer app")
 
 
-# List All Users o List one (username).
+# List All Users o List one (username)...
 def users(request, user=""):
     if user:
         response = "You're looking for user from %s <BR>" % user
