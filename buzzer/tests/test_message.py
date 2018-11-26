@@ -7,7 +7,7 @@ from ..views import create_chat,create_message,search_chat,equal_list
 # Create your tests here.
 
 #from django.contrib.auth.models import User
-
+#  v1.0
 
 class YourTestClass(TestCase):
 
