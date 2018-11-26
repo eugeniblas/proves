@@ -1,0 +1,18 @@
+[
+{
+    "model": "buzzer.chat",
+    "pk": 2,
+    "fields": {
+        "name": "chat 2",
+        "members": [1,2]
+    }
+},
+{
+    "model": "buzzer.chat",
+    "pk": 3,
+    "fields": {
+        "name": "chat 3",
+        "members": [1]
+    }
+}
+]

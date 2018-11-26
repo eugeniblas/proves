@@ -10,14 +10,14 @@ body {
 
     width: 40%;
     min-width: 500px;
-    height: 325px;
+    /*height: 400px;*/
     margin-left: -20%;
     margin-top: -15%;
     border: 4px solid #ccc;
 
     background-color: #fffcc9;
 
-    padding-left: 50px;   
+    padding-left: 50px;
     padding-top: 15px;
 }
 

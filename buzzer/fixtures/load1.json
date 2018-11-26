@@ -1,0 +1,72 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$120000$s6hjbjuZs7jZ$QHG1IToveEjYnlGd1EqqFa3aBVHC51y39h9ZJ5bL7Kc=",
+        "last_login": "2018-11-12T22:22:29.122Z",
+        "is_superuser": true,
+        "username": "eugeniblas",
+        "first_name": "",
+        "last_name": "",
+        "email": "eugeniblas@yahoo.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2018-11-12T22:21:48.342Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$120000$ySxytSfjTV4N$VHW2wUY5zmh6/+3VcVhilPngo7NSSXRziJP+yPty1ig=",
+        "last_login": "2018-11-12T22:23:11.781Z",
+        "is_superuser": true,
+        "username": "username1",
+        "first_name": "name1",
+        "last_name": "surname1",
+        "email": "user1@mail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2018-11-12T22:23:11.281Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "buzzer.profile",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "screen_name": "screename1",
+        "location": "",
+        "url": "",
+        "bio": "",
+        "birthday": null,
+        "image": "buzzer_logo.png"
+    }
+},
+{
+    "model": "buzzer.profile",
+    "pk": 2,
+    "fields": {
+        "user": 2,
+        "screen_name": "screename2",
+        "location": "",
+        "url": "",
+        "bio": "",
+        "birthday": null,
+        "image": "buzzer_logo.png"
+    }
+},
+{
+    "model": "buzzer.chat",
+    "pk": 1,
+    "fields": {
+        "name": "chat 1",
+        "members": [1,2]
+    }
+}
+]
